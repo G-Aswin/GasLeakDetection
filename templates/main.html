@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script>
+        socket = io()
+        let count = 0;
+
+
+        socket.connect('http://localhost:5000')
+        socket.on('connect', function(){
+            socket.send('a');
+        })
+
+        socket.on('message', function(msg){
+            console.log(msg);
+            for (i = 0; i < msg.length; i++){
+                document.getElementById(i).innerHTML = msg[i];
+            }
+
+            socket.send('a');
+            count += 1;
+            document.getElementById('count').innerHTML = count;
+        })
+    </script>
+    <title>Data Reciever</title>
+</head>
+<body>
+    <h1>Gas sensor data reciever</h1><br>
+    <p>Number of data points recieved : <b id="count">0</b></p>
+    <table>
+        {% for i in range(datalen) %}
+        <tr>
+            <th>{{headers[i]}}</th>
+            <td id="{{i}}">Value</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
