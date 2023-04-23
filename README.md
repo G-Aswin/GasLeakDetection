@@ -1,4 +1,4 @@
-# All the steps to set up this project
+# How to run 🤔
 
 ## Installing required packages
 

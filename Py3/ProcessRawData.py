@@ -220,6 +220,7 @@ if __name__ == '__main__':
     # select cars is optional. If you don't want to filter, remove the parameter or
     # send empty list as select_cars=[]
     # batch_process('input dir', 'out dir', 'car list')
-    batch_process('../Data/SampleRawData/',
-                  '../Data/ProcessedRawData/',
+    parent = os.path.dirname(os.getcwd())
+    batch_process('Data/SampleRawData/',
+                  'Data/ProcessedRawData/',
                   select_cars=['CFADS2274', 'CFADS2280', 'CFADS2276'])
