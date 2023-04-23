@@ -1,23 +1,25 @@
-# All the steps to set up this project (Ubuntu)
+# All the steps to set up this project
 
-## Setting up Python 2.7
+## Installing required packages
+
 ```bash
-sudo apt install python2-minimal
-python2 -V
+# install python 3 and pip3 first
+pip3 install -r requirements.txt
 ```
 
-## Setting up Pip2
+## Preprocessing the raw data (only need to be done once)
+
 ```bash
-curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
-sudo python2 get-pip.py
-pip2 --version
+# Assuming that Raw data is present in the directory : Data/SampleRawData
+python3 Py3/ProcessRawData.py
+# Output will be generated in Data/ProcessedRawData
 ```
 
-## Creating and Activating `virtualenv`
+## Running the flask server
+
 ```bash
-pip2 install virtualenv         # installing virtualenv package
-virtualenv v_env                # creating a new virtual env
-source v_env/bin/activate       # activating the new virtual env
+python3 -m flask run
 ```
 
-## Installing the required set of packages
+## Google Collab file for the ML algorithm testing
+[Gas_Leak_Detection_ML_Sample_Runs.ipynb](Gas_Leak_Detection_ML_Sample_Runs.ipynb)
