@@ -41,8 +41,6 @@ def handlemsg(msg):
     for ele in new_msg:
         mod_new_msg.append(str(ele))
     new_msg = mod_new_msg
-    print("********************************************************************************")
-    print(new_msg, type(new_msg))
     i += 1
     socket.send(new_msg)
     print('-I- Sent: ', new_msg)

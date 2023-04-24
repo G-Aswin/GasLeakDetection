@@ -1,4 +1,4 @@
-# How to run 🤔
+# Execution
 
 ## Installing required packages
 
