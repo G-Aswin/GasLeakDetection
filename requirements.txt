@@ -1,4 +1,8 @@
 Flask
 Flask-SocketIO
-numpy
-pandas
+ipykernel
+pandas==1.3.0
+numpy==1.19.2
+matplotlib==3.4.2
+scikit-learn==0.24.2
+tensorflow==2.5.0
